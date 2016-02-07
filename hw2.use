@@ -13,10 +13,23 @@ attributes
 	
 operations
 	addRental()
-		begin
-		end
 		
 	getName()
+	
+	getTotalCharge():Real
+		begin
+			declare total:Real, ch:Real;	
+			for ren in self.rentals do
+				ch:=ren.getCharge();
+				total:=total + ch;
+			end	
+			result:=total;
+			--*****************************
+			--This will not compile for some reason
+			--There seems to be conflict with the end after the for loop
+			--It works if you put result before the for loop, which doesn't make any sense
+			--*****************************
+		end	
 		
 	Statement()
 		begin
@@ -33,7 +46,7 @@ operations
 				insert(self,aCharge) into customerCharges
 			end
 		end
-	end
+end
 	
 class Rental
 attributes
