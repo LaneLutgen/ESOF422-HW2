@@ -1,0 +1,64 @@
+--Classes
+
+model Observer
+
+class Observer
+attributes
+
+operations
+	notify()
+		begin
+		end
+end
+
+class ConcreteObserver < Observer
+attributes
+
+operations
+	notify()
+		begin
+		end
+end
+
+class Subject
+attributes
+
+operations
+	attachObserver()
+		begin
+		end
+	
+	removeObserver()
+		begin
+		end
+	
+	notifyObservers()
+		begin
+		end
+	
+end
+
+class ConcreteSubject < Subject
+attributes
+
+operations
+	getState()
+		begin
+		end
+		
+	setState()
+		begin
+		end
+end
+
+--Associations
+
+aggregation observerCollection between
+	Subject [1]
+	Observer [1..*] role observers
+end
+
+association subject between
+	ConcreteSubject [1]
+	ConcreteObserver [0] 
+end
