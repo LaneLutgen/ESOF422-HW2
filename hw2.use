@@ -20,17 +20,12 @@ operations
 		begin
 			declare total:Real, ch:Real;
 			for ren in self.rentals do
-				ch:=ren.getCharge();
-				total:=total + ch;
+				ch := ren.getCharge();
+				total := total + ch;
+				result := total; 
 			end	
-			result := total;
-			
-			--*****************************
-			--This will not compile for some reason
-			--There seems to be conflict with the end after the for loop
-			--It works if you put result before the for loop, which doesn't make any sense
-			--*****************************
-		end	
+
+		end
 		
 	Statement()
 		begin
