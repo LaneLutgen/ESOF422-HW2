@@ -18,12 +18,13 @@ operations
 	
 	getTotalCharge():Real
 		begin
-			declare total:Real, ch:Real;	
+			declare total:Real, ch:Real;
 			for ren in self.rentals do
 				ch:=ren.getCharge();
 				total:=total + ch;
 			end	
-			result:=total;
+			result := total;
+			
 			--*****************************
 			--This will not compile for some reason
 			--There seems to be conflict with the end after the for loop

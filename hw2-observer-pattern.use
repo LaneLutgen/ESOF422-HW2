@@ -24,16 +24,21 @@ class Subject
 attributes
 
 operations
-	attachObserver()
+	attachObserver(o : Observer)
 		begin
+			insert (self, o) into observerCollection; 
 		end
 	
-	removeObserver()
+	removeObserver(o : Observer)
 		begin
+			delete (self, o) from observerCollection;
 		end
 	
 	notifyObservers()
 		begin
+			for obs in self.observers do
+				obs.notify();
+			end
 		end
 	
 end
