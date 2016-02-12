@@ -28,6 +28,7 @@ operations
 		begin
 			insert (self, o) into observerCollection; 
 		end
+		post: self.observers->includes(o)
 	
 	removeObserver(o : Observer)
 		begin
