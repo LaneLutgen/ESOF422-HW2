@@ -33,6 +33,7 @@ operations
 		begin
 			delete (self, o) from observerCollection;
 		end
+		pre: self.observers->notEmpty()
 	
 	notifyObservers()
 		begin
@@ -40,6 +41,7 @@ operations
 				obs.notify();
 			end
 		end
+		pre: self.observers->notEmpty()
 	
 end
 
